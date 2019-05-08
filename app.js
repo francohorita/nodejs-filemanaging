@@ -11,6 +11,7 @@ let filePath = "files/sync.txt";
 let fileContent = fs.readFileSync(filePath, charset);
 console.log(fileContent);
 
+
 //Write
 console.log("\nWrite:\n-----");
 
@@ -19,6 +20,7 @@ fs.writeFileSync(filePath, "This a txt OUTPUT file for sync purposes.");
 fileContent = fs.readFileSync(filePath, charset);
 console.log(fileContent);
 
+
 //Append
 console.log("\nAppend:\n-----");
 
@@ -26,6 +28,7 @@ filePath = "files/append-sync.txt";
 fs.appendFileSync(filePath, "This a txt APPEND file for sync purposes.\n");
 fileContent = fs.readFileSync(filePath, charset);
 console.log(fileContent);
+
 
 //Rename
 console.log("\nRename (old.txt -> new.txt):\n-----");
@@ -45,6 +48,7 @@ fileContent = fs.readFileSync(newFilePath, charset);
 console.log("Content: " + fileContent);
 
 fs.renameSync(newFilePath, filePath); //Reverting Rename
+
 
 //Delete
 console.log("\nDelete:\n-----");
@@ -68,6 +72,7 @@ try {
     fs.writeFileSync(filePath, "");
 }
 
+
 //Create Directory
 console.log("\nCreate Directory testDir:\n-----");
 
@@ -88,6 +93,7 @@ fs.unlinkSync(filePath);
 console.log("- Deleting testDir\n");
 fs.rmdirSync(dirPath);
 
+
 //Read Directory
 console.log("\nRead Directory:\n-----");
 
@@ -95,4 +101,5 @@ dirPath = "files/";
 const allDirFilesList = fs.readdirSync(dirPath);
 console.log(allDirFilesList);
 
+//End
 console.log("\nEnd");
